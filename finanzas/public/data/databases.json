@@ -1,0 +1,16 @@
+{
+    "users":[
+        {
+            "id": "001",
+            "username":"dress",
+            "password":"123456"
+        },
+        {
+            "id": "002",
+            "username":"camilo",
+            "password":"123456"
+        }
+    ],
+    "categorias":[],
+    "movimientos":[]
+}
