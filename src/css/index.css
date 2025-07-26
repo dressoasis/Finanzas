@@ -1,7 +1,18 @@
+:root {
+    --color-background: #f4f4f4;
+    --color-navbar: #1e2a38;
+    --color-primary: #4CAF50;
+    --color-primary-hover: #45a049;
+    --color-white: #ffffff;
+    --color-text-dark: #333;
+    --color-text-light: #666;
+}
+
+/* Global Styles */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--color-background);
 }
 
 /* Navbar */
@@ -9,9 +20,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1e2a38;
+    background-color: var(--color-navbar);
     padding: 15px 30px;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .navbar .logo {
@@ -20,34 +31,34 @@ body {
 }
 
 .navbar .login-btn {
-    background-color: #4CAF50;
+    background-color: var(--color-primary);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    color: white;
+    color: var(--color-white);
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .navbar .login-btn:hover {
-    background-color: #45a049;
+    background-color: var(--color-primary-hover);
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: #ffffff;
+    background: var(--color-white);
 }
 
 .hero h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: var(--color-text-dark);
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--color-text-light);
     margin-top: 20px;
 }

@@ -1,4 +1,45 @@
 /* RESET */
+:root {
+  /* Fondo animado */
+  --bg-color-0: #000000;
+  --bg-color-25: #2c2c2c;
+  --bg-color-50: #020202;
+  --bg-color-75: #121212;
+  --bg-color-100: #000000;
+
+  /* Colores generales */
+  --text-color-light: #ccc;
+  --bg-color-base: #121212;
+  --bg-navbar: #1fdf64;
+  --text-navbar: #121212;
+
+  /* Botones */
+  --btn-color-primary: #62e693;
+  --btn-color-primary-hover: #1fdf64;
+  --btn-color-danger: red;
+
+  --btn-save-bg: #28a745;
+  --btn-save-hover: #218838;
+  --btn-clear-bg: #dc3545;
+  --btn-clear-hover: #c82333;
+
+  /* Formularios y tarjetas */
+  --card-bg: white;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --form-label-color: #007bff;
+  --input-border: #ccc;
+
+  /* Tabla */
+  --table-border: #ddd;
+  --row-compra: #ffecec;
+  --row-venta: #eaffea;
+  --btn-edit-bg: #ffc107;
+  --btn-edit-text: black;
+  --btn-delete-bg: #dc3545;
+  --btn-delete-text: white;
+}
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -10,35 +51,20 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  background-color: #121212;
-  color: #ccc;
+  background-color: var(--bg-color-base);
+  color: var(--text-color-light);
   font-family: Arial, sans-serif;
   animation: cambiocolor 10s infinite;
   transition: 2s;
   padding-top: 70px;
-  /* espacio por navbar fija */
 }
 
 @keyframes cambiocolor {
-  0% {
-    background-color: #000000;
-  }
-
-  25% {
-    background-color: #2c2c2c;
-  }
-
-  50% {
-    background-color: #020202;
-  }
-
-  75% {
-    background-color: #121212;
-  }
-
-  100% {
-    background-color: #000000;
-  }
+  0%   { background-color: var(--bg-color-0); }
+  25%  { background-color: var(--bg-color-25); }
+  50%  { background-color: var(--bg-color-50); }
+  75%  { background-color: var(--bg-color-75); }
+  100% { background-color: var(--bg-color-100); }
 }
 
 /* Navbar fija */
@@ -51,28 +77,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1fdf64;
+  background-color: var(--bg-navbar);
   padding: 10px 20px;
   height: 70px;
 }
 
-/* Logo */
 .navbar img {
   height: 40px;
   width: 40px;
 }
 
-/* Título centrado con position absolute */
 .navbar h1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
-  color: #121212;
+  color: var(--text-navbar);
   margin: 0;
 }
 
-/* Botones */
 .nav-items {
   display: flex;
   gap: 10px;
@@ -80,9 +103,9 @@ body {
 
 .logout-btn,
 .btn {
-  background-color: #62e693;
+  background-color: var(--btn-color-primary);
   border: none;
-  color: #121212;
+  color: var(--text-navbar);
   padding: 8px 14px;
   border-radius: 4px;
   cursor: pointer;
@@ -92,11 +115,11 @@ body {
 }
 
 .logout-btn:hover {
-  background-color: red;
+  background-color: var(--btn-color-danger);
 }
 
 .btn:hover {
-  background-color: #1fdf64;
+  background-color: var(--btn-color-primary-hover);
 }
 
 /* Contenedor principal */
@@ -109,15 +132,15 @@ body {
 
 .form-section,
 .tabla-section {
-  background: white;
+  background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px var(--card-shadow);
 }
 
 h2 {
   margin-bottom: 1rem;
-  color: #007bff;
+  color: var(--form-label-color);
 }
 
 .form-group {
@@ -134,7 +157,7 @@ input,
 select {
   width: 100%;
   padding: 0.6rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   font-size: 1rem;
 }
@@ -142,7 +165,7 @@ select {
 .btn-guardar {
   margin-top: 1rem;
   width: 100%;
-  background-color: #28a745;
+  background-color: var(--btn-save-bg);
   color: white;
   padding: 0.7rem;
   border: none;
@@ -151,7 +174,7 @@ select {
 }
 
 .btn-guardar:hover {
-  background-color: #218838;
+  background-color: var(--btn-save-hover);
 }
 
 .filtros {
@@ -165,11 +188,11 @@ select {
 .filtros input {
   padding: 0.5rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border);
 }
 
 #btn-limpiar-filtros {
-  background-color: #dc3545;
+  background-color: var(--btn-clear-bg);
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -178,7 +201,7 @@ select {
 }
 
 #btn-limpiar-filtros:hover {
-  background-color: #c82333;
+  background-color: var(--btn-clear-hover);
 }
 
 table {
@@ -190,15 +213,15 @@ th,
 td {
   padding: 0.8rem;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--table-border);
 }
 
 tr.compra {
-  background-color: #ffecec;
+  background-color: var(--row-compra);
 }
 
 tr.venta {
-  background-color: #eaffea;
+  background-color: var(--row-venta);
 }
 
 td button {
@@ -210,11 +233,11 @@ td button {
 }
 
 td .btn-editar {
-  background-color: #ffc107;
-  color: black;
+  background-color: var(--btn-edit-bg);
+  color: var(--btn-edit-text);
 }
 
 td .btn-eliminar {
-  background-color: #dc3545;
-  color: white;
+  background-color: var(--btn-delete-bg);
+  color: var(--btn-delete-text);
 }

@@ -1,3 +1,25 @@
+:root {
+  /* Colores principales */
+  --color-background: #FEEFCE;
+  --color-text: #ccc;
+  --color-navbar-bg:#F59E0B;
+  --color-navbar-text: #D1FAE5;
+
+  /* Logo y enlaces */
+  --color-logo: #FEEFCE;
+
+  /* Botón logout */
+  --btn-logout-bg: #e74c3c;
+  --btn-logout-hover: #c0392b;
+  --btn-logout-text: white;
+
+  /* Tarjetas */
+  --card-bg: #D97706;
+  --card-border: #1fdf64;
+  --card-shadow: rgba(31, 223, 100, 0.5);
+  --card-text: #cdf5d3;
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -6,18 +28,16 @@
 }
 
 body {
-  height: 100vh;
-  background: #282828;
-  justify-content: center;
+  background: var(--color-background);
   align-items: center;
   font-family: Arial, sans-serif;
-  color: #ccc;
+  color: var(--color-text);
 }
 
 /* Navbar */
 .navbar {
-  background-color: #5fe490;
-  color: #121212;
+  background-color: var(--color-navbar-bg);
+  color: var(--color-navbar-text);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -26,12 +46,12 @@ body {
 
 .logo {
   font-size: 3rem;
-  color: #121212;
+  color: var(--color-logo);
 }
 
 .logout-btn {
-  background-color: #e74c3c;
-  color: white;
+  background-color: var(--btn-logout-bg);
+  color: var(--btn-logout-text);
   border: none;
   padding: 0.6rem 1rem;
   cursor: pointer;
@@ -40,33 +60,39 @@ body {
 }
 
 .logout-btn:hover {
-  background-color: #c0392b;
+  background-color: var(--btn-logout-hover);
 }
 
 /* Dashboard cards */
 .dashboard {
-  display: flex;
-  justify-content: space-around;
-  padding: 10rem;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 6rem;
+  gap: 2rem;
 }
 
-.card a {
-  background-color: #121212;
+.card {
+  background-color: var(--card-bg);
   border-radius: 8px;
   padding: 2rem;
-  width: 250px;
-  height: 150px;
-  box-shadow: 0 2px 8px rgba(31, 223, 100, 0.5);
-  border: 2px solid #1fdf64;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  border: 2px solid var(--card-border);
   text-align: center;
-  font-size: 2rem;
   font-weight: bold;
-  color: #cdf5d3;
+  color: var(--card-text);
   transition: transform 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
+ .card h2 {
+  margin-top: 0.5rem;
+  color: var(--card-text);
+  font-size: 2rem;
+ }
+
+ .card p {
+  font-size: 0.95rem;
+  color: var(--card-text)
+ }
